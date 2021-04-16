@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="mealModel"
+            type="com.zetatech.foodapp.data.models.Meal" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layoutDirection="rtl"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+
+        <ImageView
+            android:id="@+id/mKitchenImg"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_restaurant"
+            app:layout_constraintBottom_toTopOf="@id/mMealLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/mMealsName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@{mealModel.name}"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/mMealsPrice"
+            app:layout_constraintStart_toEndOf="@id/mKitchenImg"
+            app:layout_constraintTop_toTopOf="@id/mKitchenImg" />
+
+
+        <TextView
+            android:id="@+id/mMealsPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="@{mealModel.price + mealModel.mealCurrency}"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/mMealsName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mMealsName" />
+
+
+        <TextView
+            android:id="@+id/mMealsDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{mealModel.description}"
+            android:textColor="@color/textColorLight"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@id/mMealsPrice"
+            app:layout_constraintStart_toStartOf="@id/mMealsName"
+            app:layout_constraintTop_toBottomOf="@id/mMealsName" />
+
+
+
+        <View
+            android:id="@+id/mMealLine"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="#979797"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

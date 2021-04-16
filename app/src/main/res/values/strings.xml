@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Food Delivery</string>
+
+    <!-- Error View -->
+    <string name="error_title">Oops</string>
+    <string name="error_message">There was a problem loading the pokemon, please try again!</string>
+    <string name="error_reload">Reload</string>
+    <string name="title_activity_maps_sample">Map</string>
+    <string name="error_something_bad_happened">Something bad happened. Please try again.</string>
+    <string name="hint_hello">مرحبا!</string>
+    <string name="hint_sign_in">قم بتسجيل الدخول الي حسابك. او سجل حسابا جديدأ. واطلب وجبتك الطازجة الان.</string>
+    <string name="hint_ed_phone">(123)-456-7890</string>
+    <string name="hint_ed_password">كلمة المرور</string>
+    <string name="hint_forget_password">نسيت كلمة المرور؟</string>
+    <string name="hint_btn_sign_in">تسجيل الدخول</string>
+    <string name="hint_sign_up_fb">التسجيل بواسطة فيس بوك</string>
+    <string name="hint_sign_up">انشاء حساب</string>
+    <string name="hint_delivery_food">او يمكنك الذهاب مباشرة الي</string>
+    <string name="hint_btn_delivery_food">طلب الوجبات</string>
+
+    <string name="ErrorNoConnection">تاكد من  اتصالك بالانترنت</string>
+    <string name="ErrorNoData">لا توجد بيانات</string>
+    <string name="ErrorConnection">خطا في الاتصال </string>
+
+    <!-- Error Message -->
+    <string name="ErrorSignInConnection">فشل تسجيل الدخول حاول مرة اخري</string>
+    <string name="ErrorWritingPhone">تاكد من كتابة رقم الهاتف بشكل صحيح</string>
+    <string name="ErrorWritingPassword">تاكد من كتابة كلمة السر بشكل صحيح</string>
+
+
+    <string name="available">متوفر الان</string>
+    <string name="rate">تقيم</string>
+    <string name="deliveryAvailable">يتوفر توصيل</string>
+    <string name="deliveryNotAvailable">لا يتوفر توصيل</string>
+    <string name="hint_additional_info">معلومات اضافية</string>
+    <string name="hint_additional_details">تفاصيل اضافية</string>
+
+
+</resources>

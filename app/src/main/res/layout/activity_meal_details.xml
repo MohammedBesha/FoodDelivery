@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="mealModel"
+            type="com.zetatech.foodapp.data.models.MealDetailsData" />
+
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layoutDirection="rtl">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/mAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme">
+
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+
+
+
+                <ImageView
+                    android:id="@+id/mMealImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="parallax" />
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/mMealToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    style="@style/ToolBarWithNavigationBack"
+                    app:layout_collapseMode="pin">
+
+
+                    <ImageView
+                        android:id="@+id/searchByQR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_favorite" />
+
+
+
+                </androidx.appcompat.widget.Toolbar>
+
+
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="left|center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/background_price"
+                    android:gravity="center"
+                    android:text="@{mealModel.price + mealModel.mealCurrency}"
+                    android:textColor="@color/colorMainThree"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/mMealContentLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_white"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="14dp">
+
+
+                <TextView
+                    android:id="@+id/mMealName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{mealModel.name}"
+                    android:textColor="@color/colorMainTow"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/mMealDelivery"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:drawableStart="@drawable/ic_scooter_light"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/textColorLight"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@id/mMealRate"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mMealName" />
+
+
+                <View
+                    android:id="@+id/mViewOne"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@color/colorLight"
+                    app:layout_constraintBottom_toBottomOf="@id/mMealDelivery"
+                    app:layout_constraintEnd_toStartOf="@id/mMealRate"
+                    app:layout_constraintStart_toEndOf="@id/mMealDelivery"
+                    app:layout_constraintTop_toTopOf="@id/mMealDelivery" />
+
+
+                <TextView
+                    android:id="@+id/mMealRate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:drawableStart="@drawable/ic_favorites_light"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/textColorLight"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@id/mMealDelivery"
+                    app:layout_constraintEnd_toStartOf="@id/mMealAvailable"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@id/mMealDelivery"
+                    app:layout_constraintTop_toTopOf="@id/mMealDelivery" />
+
+                <View
+                    android:id="@+id/mViewTow"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@color/colorLight"
+                    app:layout_constraintBottom_toBottomOf="@id/mMealDelivery"
+                    app:layout_constraintEnd_toStartOf="@id/mMealAvailable"
+                    app:layout_constraintStart_toEndOf="@id/mMealRate"
+                    app:layout_constraintTop_toTopOf="@id/mMealDelivery" />
+
+
+                <TextView
+                    android:id="@+id/mMealAvailable"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:drawableStart="@drawable/ic_clock_light"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/available"
+                    android:textColor="@color/textColorLight"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@id/mMealDelivery"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@id/mMealRate"
+                    app:layout_constraintTop_toTopOf="@id/mMealDelivery" />
+
+
+                <TextView
+                    android:id="@+id/mMealDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@{mealModel.description}"
+                    android:textColor="@color/textColorGray"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mMealDelivery" />
+
+
+                <TextView
+                    android:id="@+id/mTvAdditionalInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/hint_additional_info"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mMealDescription" />
+
+
+                <TextView
+                    android:id="@+id/mMealUnit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorTvBk"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@{mealModel.mealUnit}"
+                    android:textColor="@color/colorText"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mTvAdditionalInfo" />
+
+
+                <LinearLayout
+                    android:id="@+id/mQtyContentLay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mMealUnit"
+                    android:padding="15dp"
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/mPlusQty"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_add_circle" />
+
+
+                    <TextView
+                        android:id="@+id/mQuantity"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textColor="@color/colorMainThree"
+                        android:textSize="20sp" />
+
+
+                    <ImageView
+                        android:id="@+id/mMinusQty"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_minus_circle" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/mTvMealAdditional"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/colorTvBk"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="الاضافات"
+                    android:textColor="@color/colorText"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mQtyContentLay" />
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mRvMealAdditional"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/mTvMealAdditional"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+
+                <TextView
+                    android:id="@+id/mAdditionalDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorTvBk"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/hint_additional_details"
+                    android:textColor="@color/colorText"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mRvMealAdditional" />
+
+
+                <EditText
+                    android:id="@+id/mEtDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_style"
+                    android:gravity="right|top"
+                    android:hint="@string/hint_additional_details"
+                    android:inputType="textPassword"
+                    android:padding="15dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorEditTextHint"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mAdditionalDetails"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <include
+            android:id="@+id/mEventHolder"
+            layout="@layout/linear_event_holder" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
