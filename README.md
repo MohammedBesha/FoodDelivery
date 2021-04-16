@@ -1,6 +1,16 @@
 # Food Delivery
 This project is a simplified food delivery app.
 
+# Screenshots
+<table>
+	<tr><td><img src="./screenshots/Screenshot_20210415-170337.jpg" width="500" height="1000"></td>
+	<td><img src="./screenshots/Screenshot_20210415-192102.jpg" width="500" height="1000"></td></tr>
+	<tr><td><img src="./screenshots/Screenshot_20210415-170404.jpg" width="500" height="1000"></td>
+	<td><img src="./screenshots/Screenshot_20210415-170412.jpg" width="500" height="1000"></td></tr>
+	<tr><td><img src="./screenshots/Screenshot_20210415-170429.jpg" width="500" height="1000"></td>
+	<td><img src="./screenshots/Screenshot_20210415-170448.jpg" width="500" height="1000"></td></tr>
+</table>
+
 # Features
 - Using MVP Architecture
 - Using DataBinding 
@@ -18,6 +28,4 @@ This project is a simplified food delivery app.
 - Glad for image loading
 - Calligraphy for Custom font
 
-# Author
-Mohammed Khder
-
+### By Mohammed Khder
