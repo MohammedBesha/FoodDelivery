@@ -149,9 +149,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
         boolean valid = true;
 
-//        if (!mViewBinding.mSignInCCP.isValidFullNumber()) {
-//            valid = false;
-//        }
+        if (!mViewBinding.mSignInCCP.isValidFullNumber()) {
+            valid = false;
+        }
 
         return valid;
     }
