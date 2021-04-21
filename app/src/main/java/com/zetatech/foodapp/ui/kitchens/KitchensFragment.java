@@ -71,9 +71,6 @@ public class KitchensFragment extends BaseFragment
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {
         mViewBinding = DataBindingUtil.inflate(inflater, R.layout.frag_kitchens, container, false);
-        initPresenter();
-        setUpView();
-
         return mViewBinding.getRoot();
     }
 
